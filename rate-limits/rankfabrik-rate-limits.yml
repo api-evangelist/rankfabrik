@@ -1,0 +1,31 @@
+generated: '2026-09-14'
+method: searched
+source: https://rankfabrik.com/documentation
+note: >-
+  RankFabrik does not publish a requests-per-second/minute rate limit. Throughput is
+  governed by a monthly unit quota tied to the plan (Trial 500, Artisan 25,000,
+  Studio 150,000 units/month, per product). When the quota is exhausted the API
+  responds 429 and bills nothing further. The remaining quota is returned on every
+  billable response via the x-unites-restantes header. Billability of a given call is
+  signalled by x-appel-facture. No Retry-After or standard RateLimit-* headers are
+  documented. Verified live: an unauthenticated request returns 401 before any quota
+  check, so no runtime limit headers were observable anonymously.
+limit_count: 1
+limits:
+  - scope: per-key (monthly unit quota)
+    window: month
+    limit: plan-dependent (Trial 500 / Artisan 25,000 / Studio 150,000 units)
+    burst: null
+    exhaustion_status: 429
+    note: Resets to zero at the start of each billing month; no rollover; no overage billing.
+response_headers:
+  - name: x-unites-restantes
+    meaning: Remaining monthly quota (units) after this call.
+  - name: x-appel-facture
+    meaning: Whether this call was billable.
+  - name: mesures
+    meaning: Duration, bytes, and units billed for the call.
+standard_headers:
+  ratelimit: false
+  retry_after: false
+  note: No X-RateLimit-* / RateLimit-* / Retry-After headers are documented.

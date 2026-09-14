@@ -1,0 +1,65 @@
+generated: '2026-09-14'
+method: searched
+source: https://rankfabrik.com/documentation
+note: >-
+  Cross-cutting runtime semantics for the four RankFabrik data-collection APIs,
+  read from the public documentation and confirmed against live host root responses.
+  These are read-only collection/verification APIs (no persistent write surface, no
+  resources created or mutated on the provider side), so idempotency, reversibility
+  and dry-run are not applicable rather than absent-and-penalised.
+authentication:
+  style: apiKey header
+  header: x-cle-api
+  key_prefix: rf_
+  cross_link: authentication/rankfabrik-authentication.yml
+idempotency:
+  coverage: na
+  note: >-
+    Read-only APIs — requests retrieve/verify data and do not create or mutate
+    provider-side state, so there is no replay hazard and no Idempotency-Key
+    mechanism is documented.
+reversibility:
+  grade: na
+  note: >-
+    No write surface. Calls return data (places, postings, transcripts, verification
+    verdicts); nothing is created that could be cancelled, refunded or restored.
+dry_run_mode:
+  supported: na
+  note: Read-only; a free 500-unit/month trial key serves as the rehearsal path.
+pagination:
+  style: cursor/sweep
+  note: >-
+    Jobs and Places document a sweep/segmentation model (balayer/collecte routes) to
+    exceed the public 1,000-result cap by partitioning on area/publish-window rather
+    than a single offset page. Captions accepts batches up to 50 videos, Verify up to
+    100 addresses per call. Exact page/cursor parameter names are not published in the
+    absence of an OpenAPI spec.
+versioning:
+  style: product version field
+  current: '1.0'
+  note: Each host root reports "version":"1.0"; no versioned URL prefix or header documented.
+error_envelope:
+  shape: '{"error": "<message>"}'
+  format: custom (not RFC 9457 problem+json)
+  language: French
+  cross_link: errors/rankfabrik-problem-types.yml
+metering_headers:
+  - name: x-appel-facture
+    meaning: Whether the call was billable.
+  - name: x-unites-restantes
+    meaning: Remaining monthly quota (units).
+  - name: mesures
+    meaning: Duration, bytes, and units billed.
+response_fields:
+  - name: completude
+    meaning: Per-field data fill/completeness percentage for the returned batch.
+  - name: motif
+    meaning: Reason string when a result set is empty.
+  - name: truncated
+    meaning: Set when the call hit its time budget before finishing.
+rate_limit_signaling:
+  cross_link: rate-limits/rankfabrik-rate-limits.yml
+  note: Monthly unit quota; 429 on exhaustion; remaining units in x-unites-restantes.
+request_id_tracing:
+  supported: unknown
+  note: No request-id/trace header documented.

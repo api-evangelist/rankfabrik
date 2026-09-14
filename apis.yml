@@ -4,6 +4,7 @@ description: >-
   (video transcripts), and Verify (email verification). Each response reports a per-field fill-rate/completeness
   percentage, and calls returning no result are never billed.
 url: https://raw.githubusercontent.com/api-evangelist/rankfabrik/refs/heads/main/apis.yml
+image: https://rankfabrik.com/og-en.png
 created: '2026-09-14'
 modified: '2026-09-14'
 specificationVersion: '0.21'
@@ -27,6 +28,7 @@ apis:
       extraction. Billed per place returned.
     humanURL: https://rankfabrik.com/documentation
     baseURL: https://places.rankfabrik.com
+    image: https://rankfabrik.com/og-en.png
     tags:
       - data
       - web-scraping
@@ -49,6 +51,7 @@ apis:
       posting returned.
     humanURL: https://rankfabrik.com/documentation
     baseURL: https://jobs.rankfabrik.com
+    image: https://rankfabrik.com/og-en.png
     tags:
       - data
       - web-scraping
@@ -69,6 +72,7 @@ apis:
     description: Timestamped/segmented video transcript retrieval, up to 50 videos per call. Billed per transcript returned.
     humanURL: https://rankfabrik.com/documentation
     baseURL: https://captions.rankfabrik.com
+    image: https://rankfabrik.com/og-en.png
     tags:
       - data
       - web-scraping
@@ -91,6 +95,7 @@ apis:
       addresses per call. Billed per address settled.
     humanURL: https://rankfabrik.com/documentation
     baseURL: https://verify.rankfabrik.com
+    image: https://rankfabrik.com/og-en.png
     tags:
       - data
       - web-scraping
@@ -110,8 +115,42 @@ apis:
 maintainers:
   - FN: RankFabrik
     url: https://rankfabrik.com
-generated:
+x-generated:
   by: apis.io/add
   model: claude-opus-4-8
   confidence: 88
   at: '2026-09-14T08:36:41.450Z'
+common:
+- type: Website
+  url: https://rankfabrik.com
+- type: DomainSecurity
+  url: security/rankfabrik-domain-security.yml
+- type: Plans
+  url: plans/rankfabrik-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/rankfabrik-rate-limits.yml
+- type: Authentication
+  url: authentication/rankfabrik-authentication.yml
+- type: Conventions
+  url: conventions/rankfabrik-conventions.yml
+- type: ErrorCatalog
+  url: errors/rankfabrik-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/rankfabrik-lifecycle.yml
+- type: LLMsTxt
+  url: llms/rankfabrik-llms.txt
+- type: Pricing
+  url: https://rankfabrik.com/tarifs
+- type: TermsOfService
+  url: https://rankfabrik.com/conditions
+- type: SignUp
+  url: https://rankfabrik.com/inscription
+- type: Login
+  url: https://rankfabrik.com/connexion
+- type: Documentation
+  url: https://rankfabrik.com/documentation
+x-enrichment:
+  date: '2026-09-14'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v3

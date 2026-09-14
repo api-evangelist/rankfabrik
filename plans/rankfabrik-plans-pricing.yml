@@ -1,0 +1,74 @@
+generated: '2026-09-14'
+method: searched
+source: https://rankfabrik.com/tarifs
+note: >-
+  Four products are priced independently, each on the same three-tier shape (free
+  Trial, Artisan, Studio) with a flat per-1,000-unit rate. Quotas do not roll over
+  (reset to zero monthly) and there is no metered overage — a call past quota is
+  refused with HTTP 429 and nothing is billed. A call that returns nothing consumes
+  nothing, even when it fails. Paid plans are billed monthly via Stripe, cancellable
+  anytime. Prices are in EUR.
+currency: EUR
+billing_period: monthly
+plan_count: 12
+products:
+  - product: Places
+    unit: place returned
+    rate_per_1000: 1.00
+    plans:
+      - name: Trial
+        price: 0
+        included_units: 500
+        card_required: false
+      - name: Artisan
+        price: 25.00
+        included_units: 25000
+      - name: Studio
+        price: 150.00
+        included_units: 150000
+  - product: Jobs
+    unit: posting returned
+    rate_per_1000: 2.50
+    plans:
+      - name: Trial
+        price: 0
+        included_units: 500
+        card_required: false
+      - name: Artisan
+        price: 62.50
+        included_units: 25000
+      - name: Studio
+        price: 375.00
+        included_units: 150000
+  - product: Captions
+    unit: transcript returned
+    rate_per_1000: 2.00
+    plans:
+      - name: Trial
+        price: 0
+        included_units: 500
+        card_required: false
+      - name: Artisan
+        price: 50.00
+        included_units: 25000
+      - name: Studio
+        price: 300.00
+        included_units: 150000
+  - product: Verify
+    unit: address settled
+    rate_per_1000: 4.00
+    plans:
+      - name: Trial
+        price: 0
+        included_units: 500
+        card_required: false
+      - name: Artisan
+        price: 100.00
+        included_units: 25000
+      - name: Studio
+        price: 600.00
+        included_units: 150000
+overage:
+  model: none
+  behavior: Call refused with HTTP 429 once monthly quota is exhausted; no overage billed.
+quota_rollover: false

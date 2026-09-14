@@ -1,0 +1,28 @@
+generated: '2026-09-14'
+method: searched
+source: https://rankfabrik.com/documentation
+note: >-
+  RankFabrik publishes little formal lifecycle policy. Each product host root reports
+  a "version":"1.0". No dated deprecation policy, Sunset/Deprecation (RFC 8594) header
+  practice, SLA, or public status page was found (rankfabrik.com/status returns 404).
+  A changelog page was not found (rankfabrik.com/changelog returns 404).
+versioning:
+  scheme: product version field
+  current: '1.0'
+  in_url: false
+  in_header: false
+deprecation:
+  policy: none-found
+  sunset_header: false
+  deprecation_header: false
+status_page:
+  present: false
+  probed: https://rankfabrik.com/status
+  status: 404
+sla:
+  published: false
+changelog:
+  present: false
+  probed: https://rankfabrik.com/changelog
+  status: 404
+deprecated_operations: []

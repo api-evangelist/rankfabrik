@@ -1,0 +1,29 @@
+generated: '2026-09-14'
+method: searched
+source: https://rankfabrik.com/documentation
+note: >-
+  Error catalog transcribed from the RankFabrik documentation error table and
+  confirmed against a live 401 response. The envelope is a custom JSON object
+  {"error": "<message>"} in French — NOT RFC 9457 application/problem+json. Codes are
+  shared across all four products.
+format: custom-json
+envelope_field: error
+media_type: application/json
+rfc9457: false
+observed:
+  url: https://verify.rankfabrik.com/verifier
+  status: 401
+  body: '{"error": "clé absente — la présenter dans l''en-tête x-cle-api"}'
+problem_types:
+  - status: 400
+    title: Bad request
+    meaning: Missing or contradictory parameter.
+  - status: 401
+    title: Unauthorized
+    meaning: API key missing, unknown, or revoked (present it in the x-cle-api header).
+  - status: 404
+    title: Not found
+    meaning: Unknown route.
+  - status: 429
+    title: Quota exhausted
+    meaning: Monthly unit quota exhausted; nothing is billed past that point.

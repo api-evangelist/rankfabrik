@@ -1,0 +1,29 @@
+generated: '2026-09-14'
+method: searched
+source: https://rankfabrik.com/documentation
+note: >-
+  Derived by hand from the developer documentation because RankFabrik publishes no
+  machine-readable OpenAPI (specs are provided on request by email / via Apify
+  marketplaces). All four products use a single scheme: a product-scoped API key
+  passed in the x-cle-api request header. Keys are prefixed rf_ and are not
+  interchangeable across products (a Places key cannot call Jobs). A missing or
+  unknown key returns 401. Verified live: an unauthenticated GET returns
+  HTTP 401 with body {"error":"clé absente — la présenter dans l'en-tête x-cle-api"}.
+docs: https://rankfabrik.com/documentation
+schemes:
+  - id: api_key
+    type: apiKey
+    in: header
+    name: x-cle-api
+    key_prefix: rf_
+    scope: per-product (key is bound to one of Places/Jobs/Captions/Verify)
+    description: >-
+      Product-scoped secret API key issued at signup (free trial key delivered
+      immediately, no card). Presented on every request in the x-cle-api header.
+oauth2: false
+openid_connect: false
+mutual_tls: false
+failure:
+  status: 401
+  envelope: '{"error": "<message>"}'
+  observed: true
