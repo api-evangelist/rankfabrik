@@ -1,0 +1,117 @@
+name: RankFabrik
+description: >-
+  Four independent data-collection REST APIs run from Paris — Places (local businesses), Jobs (job postings), Captions
+  (video transcripts), and Verify (email verification). Each response reports a per-field fill-rate/completeness
+  percentage, and calls returning no result are never billed.
+url: https://raw.githubusercontent.com/api-evangelist/rankfabrik/refs/heads/main/apis.yml
+created: '2026-09-14'
+modified: '2026-09-14'
+specificationVersion: '0.21'
+tags:
+  - data
+  - web-scraping
+  - local-business
+  - places
+  - jobs
+  - job-postings
+  - video-transcripts
+  - captions
+  - email-verification
+  - data-enrichment
+  - lead-generation
+  - rest-api
+apis:
+  - name: Places
+    description: >-
+      Local business data collection via geo point + radius sweep with deduplication on place ID; optional email
+      extraction. Billed per place returned.
+    humanURL: https://rankfabrik.com/documentation
+    baseURL: https://places.rankfabrik.com
+    tags:
+      - data
+      - web-scraping
+      - local-business
+      - places
+      - jobs
+      - job-postings
+      - video-transcripts
+      - captions
+      - email-verification
+      - data-enrichment
+      - lead-generation
+      - rest-api
+    properties:
+      - type: Documentation
+        url: https://rankfabrik.com/documentation
+  - name: Jobs
+    description: >-
+      Job posting collection that segments by publish window/area to exceed the public 1,000-result cap. Billed per
+      posting returned.
+    humanURL: https://rankfabrik.com/documentation
+    baseURL: https://jobs.rankfabrik.com
+    tags:
+      - data
+      - web-scraping
+      - local-business
+      - places
+      - jobs
+      - job-postings
+      - video-transcripts
+      - captions
+      - email-verification
+      - data-enrichment
+      - lead-generation
+      - rest-api
+    properties:
+      - type: Documentation
+        url: https://rankfabrik.com/documentation
+  - name: Captions
+    description: Timestamped/segmented video transcript retrieval, up to 50 videos per call. Billed per transcript returned.
+    humanURL: https://rankfabrik.com/documentation
+    baseURL: https://captions.rankfabrik.com
+    tags:
+      - data
+      - web-scraping
+      - local-business
+      - places
+      - jobs
+      - job-postings
+      - video-transcripts
+      - captions
+      - email-verification
+      - data-enrichment
+      - lead-generation
+      - rest-api
+    properties:
+      - type: Documentation
+        url: https://rankfabrik.com/documentation
+  - name: Verify
+    description: >-
+      Email verification via syntax, disposable-domain, MX and SMTP dialogue checks (no message sent), up to 100
+      addresses per call. Billed per address settled.
+    humanURL: https://rankfabrik.com/documentation
+    baseURL: https://verify.rankfabrik.com
+    tags:
+      - data
+      - web-scraping
+      - local-business
+      - places
+      - jobs
+      - job-postings
+      - video-transcripts
+      - captions
+      - email-verification
+      - data-enrichment
+      - lead-generation
+      - rest-api
+    properties:
+      - type: Documentation
+        url: https://rankfabrik.com/documentation
+maintainers:
+  - FN: RankFabrik
+    url: https://rankfabrik.com
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 88
+  at: '2026-09-14T08:36:41.450Z'
