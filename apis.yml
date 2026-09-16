@@ -9,6 +9,19 @@ created: '2026-09-14'
 modified: '2026-09-14'
 specificationVersion: '0.21'
 tags:
+  - Data
+  - Web Scraping
+  - Local Business
+  - Places
+  - Job
+  - Job Postings
+  - video-transcripts
+  - Captions
+  - Email Verification
+  - Data Enrichment
+  - Lead Generation
+  - REST API
+tags_raw:
   - data
   - web-scraping
   - local-business
@@ -30,6 +43,19 @@ apis:
     baseURL: https://places.rankfabrik.com
     image: https://rankfabrik.com/og-en.png
     tags:
+      - Data
+      - Web Scraping
+      - Local Business
+      - Places
+      - Job
+      - Job Postings
+      - video-transcripts
+      - Captions
+      - Email Verification
+      - Data Enrichment
+      - Lead Generation
+      - REST API
+    tags_raw:
       - data
       - web-scraping
       - local-business
@@ -53,6 +79,19 @@ apis:
     baseURL: https://jobs.rankfabrik.com
     image: https://rankfabrik.com/og-en.png
     tags:
+      - Data
+      - Web Scraping
+      - Local Business
+      - Places
+      - Job
+      - Job Postings
+      - video-transcripts
+      - Captions
+      - Email Verification
+      - Data Enrichment
+      - Lead Generation
+      - REST API
+    tags_raw:
       - data
       - web-scraping
       - local-business
@@ -74,6 +113,19 @@ apis:
     baseURL: https://captions.rankfabrik.com
     image: https://rankfabrik.com/og-en.png
     tags:
+      - Data
+      - Web Scraping
+      - Local Business
+      - Places
+      - Job
+      - Job Postings
+      - video-transcripts
+      - Captions
+      - Email Verification
+      - Data Enrichment
+      - Lead Generation
+      - REST API
+    tags_raw:
       - data
       - web-scraping
       - local-business
@@ -97,6 +149,19 @@ apis:
     baseURL: https://verify.rankfabrik.com
     image: https://rankfabrik.com/og-en.png
     tags:
+      - Data
+      - Web Scraping
+      - Local Business
+      - Places
+      - Job
+      - Job Postings
+      - video-transcripts
+      - Captions
+      - Email Verification
+      - Data Enrichment
+      - Lead Generation
+      - REST API
+    tags_raw:
       - data
       - web-scraping
       - local-business
